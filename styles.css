@@ -1,32 +1,33 @@
 :root {
   /* Color Palette */
-  --color-1: #843B62; /* deep pink */
-  --color-2: #8BBEB2; /* teal */
-  --color-3: #DABBC2; /* light pink */
-  --color-4: #334139; /* dark green */
-  --color-5: #003844; /* navy */
+  --color-1: #DABBC2; 
+  --color-2: black; 
+  --color-3: grey; 
+  --color-4: white;
+
+  
 
   /* Light mode */
-  --light-background: var(--color-3); /* light pink */
-  --light-primary: var(--color-5); /* navy text */
-  --light-link: var(--color-1); /* deep pink links */
-  --light-button-bg: var(--color-5); /* navy buttons */
-  --light-button-text: var(--color-3); /* light pink button text */
-  --light-nav-bg: var(--color-2); /* teal navbar */
-  --light-section-1: var(--color-2); /* teal sections */
-  --light-section-2: var(--color-1); /* deep pink sections */
-  --light-border: var(--color-5); /* navy borders */
+  --light-background: var(--color-3); 
+  --light-primary: var(--color-2); 
+  --light-link: var(--color-2); 
+  --light-button-bg: var(--color-3);
+  --light-button-text: var(--color-2); 
+  --light-nav-bg: var(--color-1); 
+  --light-section-1: var(--color-4); 
+  --light-section-2: var(--color-1); 
+  --light-border: var(--color-2); 
 
   /* Dark mode (INVERTED) */
-  --dark-background: var(--color-4); /* dark green */
-  --dark-primary: var(--color-2); /* teal text */
-  --dark-link: var(--color-3); /* light pink links */
-  --dark-button-bg: var(--color-2); /* teal buttons */
-  --dark-button-text: var(--color-4); /* dark green button text */
-  --dark-nav-bg: var(--color-5); /* navy navbar */
-  --dark-section-1: var(--color-5); /* navy sections */
-  --dark-section-2: var(--color-3); /* light pink sections */
-  --dark-border: var(--color-2); /* teal borders */
+  --dark-background: var(--color-2); 
+  --dark-primary: var(--color-2); 
+  --dark-link: var(--color-4); 
+  --dark-button-bg: var(--color-4);
+  --dark-button-text: var(--color-2); 
+  --dark-nav-bg: var(--color-1); 
+  --dark-section-1: var(--color-3); 
+  --dark-section-2: var(--color-1); 
+  --dark-border: var(--color-4); 
 
   /* Default mode */
   --background: var(--light-background);
