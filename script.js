@@ -15,32 +15,62 @@ class CssPropControl {
 const bodyCssProps = new CssPropControl(document.body);
 const toggle = document.querySelector("#dark-mode-toggle");
 
-// Check for saved user preference, if any
-const savedMode = localStorage.getItem('colorMode');
-if (savedMode) {
-    toggle.checked = savedMode === 'dark';
-    setColorMode(savedMode);
+// Function to set all color variables at once
+function setColorMode(mode) {
+    console.log(`Setting color mode to: ${mode}`);
+    
+    // Set all CSS variables
+    document.documentElement.style.setProperty('--background', `var(--${mode}-background)`);
+    document.documentElement.style.setProperty('--primary', `var(--${mode}-primary)`);
+    document.documentElement.style.setProperty('--link', `var(--${mode}-link)`);
+    document.documentElement.style.setProperty('--button-bg', `var(--${mode}-button-bg)`);
+    document.documentElement.style.setProperty('--button-text', `var(--${mode}-button-text)`);
+    document.documentElement.style.setProperty('--nav-bg', `var(--${mode}-nav-bg)`);
+    document.documentElement.style.setProperty('--section-1', `var(--${mode}-section-1)`);
+    document.documentElement.style.setProperty('--section-2', `var(--${mode}-section-2)`);
+    document.documentElement.style.setProperty('--border', `var(--${mode}-border)`);
 }
 
-// Set initial mode if no preference saved
-if (!savedMode) {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (prefersDark) {
-        toggle.checked = true;
-        setColorMode('dark');
+// Initialize color mode
+function initializeColorMode() {
+    const savedMode = localStorage.getItem('colorMode');
+    
+    if (savedMode) {
+        // Use saved preference
+        toggle.checked = savedMode === 'dark';
+        setColorMode(savedMode);
+    } else {
+        // Use system preference or default to light
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const defaultMode = prefersDark ? 'dark' : 'light';
+        toggle.checked = prefersDark;
+        setColorMode(defaultMode);
+        localStorage.setItem('colorMode', defaultMode);
     }
 }
 
+// Event listener for toggle
 toggle.addEventListener('change', () => {
     const mode = toggle.checked ? 'dark' : 'light';
     setColorMode(mode);
     localStorage.setItem('colorMode', mode);
 });
 
-function setColorMode(mode) {
-    bodyCssProps.set('--background', bodyCssProps.get(`--${mode}-background`));
-    bodyCssProps.set('--primary', bodyCssProps.get(`--${mode}-primary`));
-    bodyCssProps.set('--link', bodyCssProps.get(`--${mode}-link`));
-    bodyCssProps.set('--button-bg', bodyCssProps.get(`--${mode}-button-bg`));
-    bodyCssProps.set('--button-text', bodyCssProps.get(`--${mode}-button-text`));
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', initializeColorMode);
+
+// Also initialize if script loads after DOM is already loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeColorMode);
+} else {
+    initializeColorMode();
 }
+
+// Listen for system preference changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('colorMode')) {
+        const mode = e.matches ? 'dark' : 'light';
+        toggle.checked = e.matches;
+        setColorMode(mode);
+    }
+});

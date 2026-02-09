@@ -1,105 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Aleksandra's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="toggle-switch.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aleksandra's Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="toggle-switch.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <h1><a href="Index.html">Aleksandra Marchewka</a></h1>
-            <ul>
-                <li><a href="Projects.html">All Projects</a></li>
-                <li><a href="Contact.html">Contact</a></li>
-                <li><a href="Blog.html">Blog</a></li>
-                <li><a href="DigitalGarden.html">Digital Garden</a></li>
-            </ul>
-        </nav>
-        <div class="controls">
-            <label class="toggle-switch">
-                Dark Mode
-                <input type="checkbox" id="dark-mode-toggle">
-                <div class="toggle-switch-border">
-                    <div class="toggle-switch-dot"></div>
-                </div>
-            </label>
-        </div>
-    </header>
-
-    <section class="bio" style="background-color: var(--background)">
-        <img class="profileImg" src="headshot.jpg" alt="A picture of me" style="background-color: var(--primary)">
-        <div>
-            <h2>Hello! I am Aleksandra Marchewka. I am a Software Developer.</h2>
-            <p>I've been coding since I was 13 and recently finished my undergraduate degree in computer science. I
-                have an interest in fullstack development (software, web and apps) and machine learning.</p>
-
-            <a class="portfolio" href="Work.html">See my work</a>
-        </div>
-    </section>
-
-    <section class="skills" style="background-color: var(--background)">
-    
-        <div>
-            <h2>My Stack</h2>
-        <ul class="skills">
-                    <li>Python</li>
-                    <li>Java</li>
-                    <li>C#</li>
-                    <li>C++</li>
-                    <li>JavaScript</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>Laravel</li>
-                    <li>Unity</li>
-                    <li>Android Studio</li>
-                    <li>SQL</li>
-                    <li>Docker</li>
-                    <li>Git</li>
-                    <li>Machine Learning</li>
-                    </ul>
-                </div>
-                    
-    </section>
-
-    <section class="recentWork">
-        <h2>Recent Work</h2>
-        <p>Currently I am refactoring and improving my projects from university. Links to completed work will be added shortly </p>
-
-
-    <footer>
+  <header>
+    <nav>
+      <div class="nav-left">
+        <h1><a href="Index.html">Aleksandra Marchewka</a></h1>
+      </div>
+      <div class="nav-right">
         <ul>
-            <li>
-                <a href="https://www.linkedin.com/in/aleksandrajowitamarchewka/">
-                    LinkedIn
-                    <span class="link-icon">
-                        <i class="fab fa-linkedin-in"></i>
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="Resume.html">
-                    CV
-                    <span class="link-icon">
-                        <i class="fas fa-user"></i>
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="https://github.com/AleksandraMarchewka03">
-                    GitHub
-                    <span class="link-icon">
-                        <i class="fab fa-github"></i>
-                    </span>
-                </a>
-            </li>
+          <li><a href="Projects.html">All Projects</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <li><a href="Blog.html">Blog</a></li>
+          <li><a href="DigitalGarden.html">Digital Garden</a></li>
         </ul>
-        <p class="copyright">© 2025 Aleksandra Marchewka</p>
-    </footer>
-    <script src="script.js"></script>
+        <div class="controls">
+          <label class="toggle-switch">
+            Dark Mode
+            <input type="checkbox" id="dark-mode-toggle">
+            <div class="toggle-switch-border">
+              <div class="toggle-switch-dot"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="bio">
+    <img class="profileImg" src="headshot.jpg" alt="A picture of me">
+    <div>
+      <h2>Hello! I am Aleksandra Marchewka. I am a Software Developer.</h2>
+      <p>I've been coding since I was 13 and recently finished my undergraduate degree in computer science. I have an interest in fullstack development and machine learning.</p>
+      <a class="portfolio" href="Work.html">See my work</a>
+    </div>
+  </section>
+
+  <section class="skills">
+    <h2>My Stack</h2>
+    <ul class="skills">
+      <li>Python</li><li>Java</li><li>C#</li><li>C++</li>
+      <li>JavaScript</li><li>HTML</li><li>CSS</li><li>Laravel</li>
+      <li>Unity</li><li>Android Studio</li><li>SQL</li>
+      <li>Docker</li><li>Git</li><li>Machine Learning</li>
+    </ul>
+  </section>
+
+  <section class="recentWork">
+    <h2>Recent Work</h2>
+    <p>Currently I am refactoring and improving my projects from university. Links to completed work will be added shortly.</p>
+    <a class="portfolio" href="Work.html">See my work</a>
+  </section>
+
+  <footer>
+    <ul>
+      <li>
+        <a href="https://www.linkedin.com/in/aleksandrajowitamarchewka/">
+          LinkedIn
+          <span class="link-icon"><i class="fab fa-linkedin-in"></i></span>
+        </a>
+      </li>
+      <li>
+        <a href="Resume.html">
+          CV
+          <span class="link-icon"><i class="fas fa-user"></i></span>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/AleksandraMarchewka03">
+          GitHub
+          <span class="link-icon"><i class="fab fa-github"></i></span>
+        </a>
+      </li>
+    </ul>
+    <p class="copyright">© 2025 Aleksandra Marchewka</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
-
