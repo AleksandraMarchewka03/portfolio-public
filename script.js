@@ -13,9 +13,6 @@ class CssPropControl {
 }
 
 const bodyCssProps = new CssPropControl(document.body);
-
-
-// Function to set all color variables at once
 const modeText = document.querySelector("#mode-text");
 const toggle = document.querySelector("#dark-mode-toggle");
 
@@ -34,8 +31,13 @@ function setColorMode(mode) {
     document.documentElement.style.setProperty('--section-2', `var(--${mode}-section-2)`);
     document.documentElement.style.setProperty('--border', `var(--${mode}-border)`);
     
-    // Update toggle text
-    modeText.textContent = mode === 'dark' ? 'Light Mode' : 'Dark Mode';
+    // Update toggle text based on current language
+    const lang = getCurrentLanguage();
+    const t = translations[lang];
+    if (modeText) {
+        modeText.textContent = mode === 'dark' ? t.lightMode : t.darkMode;
+        modeText.setAttribute('data-translate', mode === 'dark' ? 'lightMode' : 'darkMode');
+    }
 }
 
 // Initialize color mode
@@ -44,32 +46,36 @@ function initializeColorMode() {
     
     if (savedMode) {
         // Use saved preference
-        toggle.checked = savedMode === 'dark';
+        if (toggle) toggle.checked = savedMode === 'dark';
         setColorMode(savedMode);
     } else {
         // Use system preference or default to light
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const defaultMode = prefersDark ? 'dark' : 'light';
-        toggle.checked = prefersDark;
+        if (toggle) toggle.checked = prefersDark;
         setColorMode(defaultMode);
         localStorage.setItem('colorMode', defaultMode);
     }
 }
 
 // Event listener for toggle
-toggle.addEventListener('change', () => {
-    const mode = toggle.checked ? 'dark' : 'light';
-    setColorMode(mode);
-    localStorage.setItem('colorMode', mode);
-});
+if (toggle) {
+    toggle.addEventListener('change', () => {
+        const mode = toggle.checked ? 'dark' : 'light';
+        setColorMode(mode);
+        localStorage.setItem('colorMode', mode);
+    });
+}
 
 // Initialize when page loads
-document.addEventListener('DOMContentLoaded', initializeColorMode);
+document.addEventListener('DOMContentLoaded', () => {
+    initializeLanguage();
+    initializeColorMode();
+});
 
 // Also initialize if script loads after DOM is already loaded
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeColorMode);
-} else {
+if (document.readyState !== 'loading') {
+    initializeLanguage();
     initializeColorMode();
 }
 
@@ -77,7 +83,7 @@ if (document.readyState === 'loading') {
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
     if (!localStorage.getItem('colorMode')) {
         const mode = e.matches ? 'dark' : 'light';
-        toggle.checked = e.matches;
+        if (toggle) toggle.checked = e.matches;
         setColorMode(mode);
     }
 });

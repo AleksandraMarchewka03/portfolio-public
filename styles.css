@@ -250,6 +250,7 @@ header nav {
   transition: color 0.5s;
 }
 
+
 /* Toggle styles */
 .toggle-switch {
   display: inline-flex;
@@ -275,6 +276,12 @@ header nav {
 
 .settings-menu .toggle-switch:hover {
   background: rgba(0, 0, 0, 0.05);
+}
+
+.settings-item + .settings-item {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #mode-text {
@@ -310,6 +317,9 @@ header nav {
 .toggle-switch input:checked + .toggle-switch-border .toggle-switch-dot {
   transform: translate3d(26px, 0, 0);
 }
+
+
+
 
 /* === SECTIONS === */
 section {
