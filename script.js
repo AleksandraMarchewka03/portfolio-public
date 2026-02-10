@@ -13,6 +13,10 @@ class CssPropControl {
 }
 
 const bodyCssProps = new CssPropControl(document.body);
+
+
+// Function to set all color variables at once
+const modeText = document.querySelector("#mode-text");
 const toggle = document.querySelector("#dark-mode-toggle");
 
 // Function to set all color variables at once
@@ -29,6 +33,9 @@ function setColorMode(mode) {
     document.documentElement.style.setProperty('--section-1', `var(--${mode}-section-1)`);
     document.documentElement.style.setProperty('--section-2', `var(--${mode}-section-2)`);
     document.documentElement.style.setProperty('--border', `var(--${mode}-border)`);
+    
+    // Update toggle text
+    modeText.textContent = mode === 'dark' ? 'Light Mode' : 'Dark Mode';
 }
 
 // Initialize color mode

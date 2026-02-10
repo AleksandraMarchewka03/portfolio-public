@@ -10,30 +10,37 @@
 </head>
 <body>
   <header>
-    <nav>
-      <div class="nav-left">
-        <h1><a href="Index.html">Aleksandra Marchewka</a></h1>
-      </div>
-      <div class="nav-right">
-        <ul>
-          <li><a href="Projects.html">All Projects</a></li>
-          <li><a href="Contact.html">Contact</a></li>
-          <li><a href="Blog.html">Blog</a></li>
-          <li><a href="DigitalGarden.html">Digital Garden</a></li>
-        </ul>
-        <div class="controls">
-          <label class="toggle-switch">
-            Dark Mode
-            <input type="checkbox" id="dark-mode-toggle">
-            <div class="toggle-switch-border">
-              <div class="toggle-switch-dot"></div>
-            </div>
-          </label>
+<nav>
+  <div class="nav-left">
+    <h1><a href="Index.html">Aleksandra Marchewka</a></h1>
+  </div>
+  <div class="nav-right">
+    <ul>
+      <li><a href="Projects.html">All Projects</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+      <li><a href="Blog.html">Blog</a></li>
+      <li><a href="DigitalGarden.html">Digital Garden</a></li>
+    </ul>
+    <div class="controls">
+      <div class="settings-dropdown">
+        <button class="settings-button">Settings</button>
+        <div class="settings-menu">
+          <div class="settings-item">
+            <h3>Color Mode</h3>
+            <label class="toggle-switch">
+              <span id="mode-text">Dark Mode</span>
+              <input type="checkbox" id="dark-mode-toggle">
+              <div class="toggle-switch-border">
+                <div class="toggle-switch-dot"></div>
+              </div>
+            </label>
+          </div>
         </div>
       </div>
-    </nav>
+    </div>
+  </div>
+</nav>
   </header>
-
   <section class="bio">
     <img class="profileImg" src="headshot.jpg" alt="A picture of me">
     <div>
@@ -42,7 +49,6 @@
       <a class="portfolio" href="Work.html">See my work</a>
     </div>
   </section>
-
   <section class="skills">
     <h2>My Stack</h2>
     <ul class="skills">
@@ -52,13 +58,11 @@
       <li>Docker</li><li>Git</li><li>Machine Learning</li>
     </ul>
   </section>
-
   <section class="recentWork">
     <h2>Recent Work</h2>
     <p>Currently I am refactoring and improving my projects from university. Links to completed work will be added shortly.</p>
     <a class="portfolio" href="Work.html">See my work</a>
   </section>
-
   <footer>
     <ul>
       <li>
@@ -82,7 +86,6 @@
     </ul>
     <p class="copyright">© 2025 Aleksandra Marchewka</p>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
