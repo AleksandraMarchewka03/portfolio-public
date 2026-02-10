@@ -36,6 +36,9 @@
             </div>
           </div>
         </div>
+        <div class="language-indicator">
+          <span class="lang-flag" id="current-lang">EN</span>
+        </div>
       </div>
     </div>
   </nav>

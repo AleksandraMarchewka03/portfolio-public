@@ -19,12 +19,17 @@ const translations = {
     myStack: "My Stack",
     recentWork: "Recent Work",
     recentWorkText: "Currently I am refactoring and improving my projects from university. Links to completed work will be added shortly.",
-    
+    // Resume page
+    cvTitle: "My Resume",
+    downloadResume: "Download Resume",
+    downloadEnglish: "Download English Version",
+    downloadPolish: "Download Polish Version",
     // Footer
     linkedin: "LinkedIn",
     cv: "CV",
     github: "GitHub",
-    copyright: "© 2025 Aleksandra Marchewka"
+    copyright: "© 2025 Aleksandra Marchewka",
+    languageNotice: "🌐 Available in English and Polish",
   },
   pl: {
     // Navigation
@@ -38,6 +43,7 @@ const translations = {
     darkMode: "Tryb Ciemny",
     lightMode: "Tryb Jasny",
     language: "Język",
+    languageNotice: "🌐 Dostępne po angielsku i po polsku",
     
     // Home page
     greeting: "Cześć! Jestem Aleksandra Marchewka. Jestem Programistką.",
@@ -46,7 +52,11 @@ const translations = {
     myStack: "Mój Stack",
     recentWork: "Ostatnie Prace",
     recentWorkText: "Obecnie refaktoryzuję i ulepszam moje projekty z uniwersytetu. Linki do ukończonych prac zostaną dodane wkrótce.",
-    
+     // Resume page
+    cvTitle: "Moje CV",
+    downloadResume: "Pobierz CV",
+    downloadEnglish: "Pobierz Wersję Angielską",
+    downloadPolish: "Pobierz Wersję Polską",
     // Footer
     linkedin: "LinkedIn",
     cv: "CV",
@@ -108,5 +118,42 @@ function initializeLanguage() {
       const newLang = langToggle.checked ? 'pl' : 'en';
       setLanguage(newLang);
     });
+  }
+}
+
+// Update all translatable elements on the page
+function updatePageLanguage() {
+  const lang = getCurrentLanguage();
+  const t = translations[lang];
+  
+  // Update all elements with data-translate attribute
+  document.querySelectorAll('[data-translate]').forEach(element => {
+    const key = element.getAttribute('data-translate');
+    if (t[key]) {
+      element.textContent = t[key];
+    }
+  });
+  
+  // Update language indicator
+  const currentLangIndicator = document.getElementById('current-lang');
+  if (currentLangIndicator) {
+    currentLangIndicator.textContent = lang === 'en' ? 'EN' : 'PL';
+  }
+  
+  // Update language toggle text to show current language (what you're viewing)
+  const langText = document.getElementById('lang-text');
+  if (langText) {
+    // Show current language with emphasis
+    if (lang === 'en') {
+      langText.innerHTML = '<strong>ENG</strong> / PL';
+    } else {
+      langText.innerHTML = 'ENG / <strong>PL</strong>';
+    }
+  }
+  
+  // Update language toggle checkbox state
+  const langToggle = document.getElementById('language-toggle');
+  if (langToggle) {
+    langToggle.checked = lang === 'pl';
   }
 }
