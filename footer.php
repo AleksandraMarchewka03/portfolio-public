@@ -19,8 +19,8 @@
       </a>
     </li>
   </ul>
-  <p class="language-notice" data-translate="languageNotice">
-    🌐 Available in English and Polish - Check Settings
-  </p>
-  <p class="copyright" data-translate="copyright">© 2025 Aleksandra Marchewka</p>
+  <div class="footer-bottom">
+    <p class="language-notice" data-translate="languageNotice">🌐 Available in English and Polish</p>
+    <p class="copyright" data-translate="copyright">© 2025 Aleksandra Marchewka</p>
+  </div>
 </footer>

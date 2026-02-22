@@ -1,15 +1,24 @@
+<?php require_once 'includes/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aleksandra's Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <title><?php echo SITE_NAME; ?></title>
+  <meta name="description" content="<?php echo META_DESCRIPTION_EN; ?>">
+  <link rel="stylesheet" href="<?php echo css('main.css'); ?>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <?php include 'nav.php'; ?>
+  <?php include 'includes/nav.php'; ?>
 
+  <!-- Content -->
+
+  <?php include 'includes/footer.php'; ?>
+
+  <script type="module" src="<?php echo js('main.js'); ?>"></script>
+</body>
+</html>
   <section class="bio">
     <img class="profileImg" src="headshot.jpg" alt="A picture of me">
     <div>
@@ -35,9 +44,9 @@
     <a class="portfolio" href="Work.php" data-translate="seeMyWork">See my work</a>
   </section>
 
-  <?php include 'footer.php'; ?>
 
-  <script src="translations.js"></script>
-  <script src="script.js"></script>
+  <?php include 'includes/footer.php'; ?>
+
+  <script type="module" src="<?php echo js('main.js'); ?>"></script>
 </body>
 </html>

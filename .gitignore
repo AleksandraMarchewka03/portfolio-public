@@ -1,0 +1,25 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*~
+
+# Environment
+.env
+
+# User uploads (if you add this later)
+uploads/
+
+# Don't ignore assets
+!assets/
