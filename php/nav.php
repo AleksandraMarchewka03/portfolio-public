@@ -1,14 +1,13 @@
 <header>
   <nav>
     <div class="nav-left">
-      <h1><a href="Index.php" data-translate="name">Aleksandra Marchewka</a></h1>
+      <h1><a href="Home.php" data-translate="name">Aleksandra Marchewka</a></h1>
     </div>
     <div class="nav-right">
       <ul>
+        <li><a href="Home.php" data-translate="home">Home</a></li>
         <li><a href="Projects.php" data-translate="allProjects">All Projects</a></li>
         <li><a href="Contact.php" data-translate="contact">Contact</a></li>
-        <li><a href="Blog.php" data-translate="blog">Blog</a></li>
-        <li><a href="DigitalGarden.php" data-translate="digitalGarden">Digital Garden</a></li>
       </ul>
       <div class="controls">
         <div class="settings-dropdown">
