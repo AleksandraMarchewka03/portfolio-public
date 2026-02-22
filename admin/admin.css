@@ -1,0 +1,299 @@
+/* ============================================================
+   admin.css — Portfolio Admin Panel
+   Covers dashboard.php and project_form.php
+   ============================================================ */
+
+/*  Shared admin body  */
+body { padding-bottom: 4rem; }
+
+/*  Admin header bar  */
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--nav-bg);
+  border-bottom: 2px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.admin-header h1 { margin: 0; font-size: 1.1rem; font-weight: 700; }
+
+.admin-tabs { display: flex; gap: 0.5rem; }
+
+.admin-tab {
+  padding: 0.45rem 1rem;
+  border: 2px solid var(--border);
+  border-radius: 0.6rem;
+  background: transparent;
+  color: var(--button-text);
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.admin-tab.active,
+.admin-tab:hover { background: var(--link); color: var(--background); border-color: var(--link); }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: red;
+  color: #fff;
+  border-radius: 9999px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 1.1rem;
+  height: 1.1rem;
+  padding: 0 0.25rem;
+  margin-left: 0.3rem;
+}
+
+.logout-btn {
+  padding: 0.4rem 0.85rem;
+  border: 2px solid var(--border);
+  border-radius: 0.6rem;
+  background: transparent;
+  color: var(--button-text);
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.logout-btn:hover { background: var(--button-bg); }
+
+/*  Main content area  */
+.admin-body { max-width: 1024px; margin: 0 auto; padding: 2rem 1rem; }
+
+/*  Table  */
+.admin-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+
+.admin-table th,
+.admin-table td {
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.admin-table th {
+  font-weight: 700;
+  opacity: 0.65;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.admin-table tr:hover td { background: rgba(0,0,0,0.03); }
+
+/*  Status badges  */
+.status-badge {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.status-new      { background: #fef3c7; color: #92400e; }
+.status-read     { background: #dbeafe; color: #1e40af; }
+.status-replied  { background: #d1fae5; color: #065f46; }
+.status-archived { background: #f3f4f6; color: #6b7280; }
+
+/*  Action buttons  */
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.65rem;
+  border: 2px solid var(--border);
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--button-text);
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.action-btn:hover { background: var(--link); color: var(--background); border-color: var(--link); }
+.action-btn.danger:hover { background: #dc2626; border-color: #dc2626; color: #fff; }
+
+.new-project-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.25rem;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: 2px solid var(--border);
+  border-radius: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 1.25rem;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.new-project-btn:hover { background: var(--link); color: var(--background); border-color: var(--link); }
+
+/*  Inquiry expand row  */
+.msg-short { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 260px; }
+.expand-row { display: none; background: var(--section-2); }
+.expand-row.open { display: table-row; }
+.expand-row td { padding: 0.75rem 1.25rem; font-size: 0.875rem; white-space: pre-wrap; line-height: 1.6; }
+
+/*  Published indicator dot  */
+.published-dot {
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  margin-right: 0.35rem;
+}
+.dot-on  { background: #22c55e; }
+.dot-off { background: #9ca3af; }
+
+/*  Project form  */
+.form-wrap { max-width: 860px; margin: 2rem auto; padding: 0 1rem; }
+
+.form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.form-header h1 { margin: 0; font-size: 1.4rem; font-weight: 700; }
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  border: 2px solid var(--border);
+  border-radius: 0.6rem;
+  background: transparent;
+  color: var(--button-text);
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.back-btn:hover { background: var(--button-bg); }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-full { grid-column: 1/-1; }
+
+.field { display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 0.85rem; }
+.field label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.65;
+}
+.field input,
+.field textarea,
+.field select {
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: 2px solid var(--border);
+  border-radius: 0.6rem;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.9rem;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s, background 0.5s;
+}
+.field input:focus,
+.field textarea:focus { border-color: var(--link); }
+.field textarea { min-height: 100px; line-height: 1.55; }
+.field textarea.tall { min-height: 160px; }
+.field small { font-size: 0.75rem; opacity: 0.55; }
+
+.section-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.5;
+  margin: 1.5rem 0 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.image-thumbs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.image-thumb { position: relative; }
+.image-thumb img {
+  width: 90px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  border: 2px solid var(--border);
+  display: block;
+}
+.image-thumb label { position: absolute; top: 3px; right: 3px; cursor: pointer; }
+.image-thumb input[type=checkbox] { accent-color: red; width: 1rem; height: 1rem; }
+
+/* Re-use .submit-btn from styles.css — admin version */
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.5rem;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: 2px solid var(--border);
+  border-radius: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.submit-btn:hover { background: var(--link); color: var(--background); border-color: var(--link); }
+
+.error-box {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 2px solid #fca5a5;
+  border-radius: 0.6rem;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1rem;
+}
+.error-box ul { margin: 0; padding-left: 1.25rem; }
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.toggle-label input { width: 1rem; height: 1rem; accent-color: var(--link); }
+
+/*  Admin responsive  */
+@media (max-width: 640px) {
+  .admin-header { flex-wrap: wrap; gap: 0.5rem; }
+  .admin-tabs { flex-wrap: wrap; }
+}
+
+@media (max-width: 600px) {
+  .form-grid { grid-template-columns: 1fr; }
+}

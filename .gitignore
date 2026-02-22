@@ -1,0 +1,15 @@
+# Database credentials — NEVER commit
+admin/db.php
+
+# User uploads (images, PDFs — large files, personal content)
+uploads/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# PHP logs
+*.log
+error_log
