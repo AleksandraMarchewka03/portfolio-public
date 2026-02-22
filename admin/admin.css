@@ -2,7 +2,27 @@
    admin.css — Portfolio Admin Panel
    Covers dashboard.php and project_form.php
    ============================================================ */
+body {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+}
 
+body,
+.admin-header,
+.field input,
+.field textarea,
+.field select,
+.login-box {
+  --background:   #ffffff;
+  --primary:      #1a1a1a;
+  --link:         #be7b89;
+  --button-bg:    #f5f5f5;
+  --button-text:  #1a1a1a;
+  --nav-bg:       #f9f9f9;
+  --section-1:    #ffffff;
+  --section-2:    #f5f5f5;
+  --border:       #d0d0d0;
+}
 /*  Shared admin body  */
 body { padding-bottom: 4rem; }
 
