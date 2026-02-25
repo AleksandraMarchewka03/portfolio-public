@@ -2,6 +2,8 @@
 
 Personal portfolio website built with PHP, JavaScript, and MySQL. Features a bilingual (English/Polish) interface, project showcase with filtering and modal views, contact form, and a private admin panel for content management.
 
+Live page: https://aleksandra-dev.infinityfree.me/Home.php
+
 ## Features
 
 - English / Polish language toggle
